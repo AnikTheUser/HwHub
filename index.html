@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PDF Files</title>
+	<style>
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.pdf {
+			margin: 10px;
+			width: 200px;
+			height: 250px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			border: 2px solid black;
+			border-radius: 5px;
+			background-color: #f2f2f2;
+			cursor: pointer;
+		}
+
+		.pdf:hover {
+			background-color: #e6e6e6;
+		}
+
+		.pdf-icon {
+			font-size: 48px;
+			color: #008CBA;
+			margin-bottom: 10px;
+		}
+
+		.pdf-name {
+			font-size: 18px;
+			color: black;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>PDF Files</h1>
+	<div class="container">
+		<div class="pdf" onclick="window.open('pdfs/file1.pdf')">
+			<i class="fas fa-file-pdf pdf-icon"></i>
+			<div class="pdf-name">File 1</div>
+		</div>
+		<div class="pdf" onclick="window.open('pdfs/file2.pdf')">
+			<i class="fas fa-file-pdf pdf-icon"></i>
+			<div class="pdf-name">File 2</div>
+		</div>
+		<!-- Add more PDFs as needed -->
+	</div>
+	<script src="https://kit.fontawesome.com/your-account-id.js" crossorigin="anonymous"></script>
+</body>
+</html>
