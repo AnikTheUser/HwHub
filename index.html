@@ -1,72 +1,146 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>PDF Files</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-	<style>
-		.container {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
-body {
-  background-color: #1D1E22;
-}
-		
-		.pdf {
-			margin: 10px;
-			width: 150px;
-			height: 150px;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			border: 2px solid white;
-			border-radius: 5px;
-			background-color: #2B2D42;
-			cursor: pointer;
-		}
+    <title>PDF Files</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-		.pdf:hover {
-			background-color: black;
-		}
+        body {
+            background-color: #1D1E22;
+        }
 
-		.pdf-icon {
-			font-size: 48px;
-			color: #008CBA;
-			margin-bottom: 10px;
-		}
+        .pdf {
+            margin: 10px;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid white;
+            border-radius: 5px;
+            background-color: #2B2D42;
+            cursor: pointer;
+        }
 
-		.pdf-name {
-			font-size: 18px;
-			color: white;
-			text-align: center;
-				
-		}
-		h1 {
-	font-size: 50px;
-	text-align: center;
-	color: white;
-font-family: 'Great Vibes', cursive;
-	
-}
-	</style>
+        .pdf:hover {
+            background-color: black;
+        }
+
+        .pdf-icon {
+            font-size: 48px;
+            color: #008CBA;
+            margin-bottom: 10px;
+        }
+
+        .pdf-name {
+            font-size: 18px;
+            color: white;
+            text-align: center;
+
+        }
+
+        h1 {
+            font-size: 50px;
+            text-align: center;
+            color: white;
+            font-family: 'Great Vibes', cursive;
+
+        }
+
+        h2 {
+            font-size: 35px;
+            text-align: center;
+            color: white;
+            font-family: 'Great Vibes', cursive;
+
+        }
+
+        p {
+            font-size: 16px;
+            text-align: center;
+            color: white;
+            font-family: 'arial';
+
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #1D1E22;
+            padding: 20px;
+            box-shadow: 0 0 25px rgba(255, 256, 255);
+        }
+
+        /* Style the close button */
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: px;
+            color: #ff0000;
+            cursor: pointer;
+
+        }
+    </style>
 </head>
+
 <body>
-	<h1 style="color:white"><center>NoteHub</center></h1>
-	<div class="container">
-		<div class="pdf" onclick="window.open('pdfs/file1.pdf')">
-			<i class="fas fa-file-pdf pdf-icon"></i>
-			<div class="pdf-name">Telegu Ls 1</div>
-		</div>
-		<div class="pdf" onclick="window.open('pdfs/file2.pdf')">
-			<i class="fas fa-file-pdf pdf-icon"></i>
-			<div class="pdf-name">Holiday Hw</div>
-		</div>
-		<!-- Add more PDFs as needed -->
-	</div>
-	<script src="https://kit.fontawesome.com/9e0761fa1a.js" crossorigin="anonymous"></script>
+    <h1 style="color:white">
+        <center>NoteHub</center>
+    </h1>
+    <div class="container">
+        <div class="pdf" onclick="window.open('pdfs/file1.pdf')">
+            <i class="fas fa-file-pdf pdf-icon"></i>
+            <div class="pdf-name">Telegu Ls 1</div>
+        </div>
+        <div class="pdf" onclick="window.open('pdfs/file2.pdf')">
+            <i class="fas fa-file-pdf pdf-icon"></i>
+            <div class="pdf-name">Holiday Hw</div>
+        </div>
+        <!-- Add more PDFs as needed -->
+    </div>
+    <script src="https://kit.fontawesome.com/9e0761fa1a.js" crossorigin="anonymous"></script>
+    <script>
+        // Function to display the popup
+        function displayPopup() {
+            // Create the popup element
+            var popup = document.createElement('div');
+            popup.className = 'popup';
+
+            // Add the popup content
+            popup.innerHTML = '<h2 >How to Use</h2><p style="color:white">NoteHub is a website with a simple and user-friendly interface. You can click on any tab with the lesson title to access the desired content. Once the PDF loads, you have the option to download it by clicking on the top-right download button. Alternatively, you can continue writing directly in the browser itself. NoteHub makes it easy to navigate through lessons and offers the flexibility to either save the content offline or work on it within the browser.</p>';
+
+            // Create the close button
+            var closeButton = document.createElement('span');
+            closeButton.className = 'close';
+            closeButton.innerHTML = '&times;'; // Insert an "X" symbol
+            closeButton.addEventListener('click', function() {
+                popup.parentNode.removeChild(popup); // Remove the popup when the close button is clicked
+            });
+
+            // Append the close button to the popup
+            popup.appendChild(closeButton);
+
+            // Append the popup to the body element
+            document.body.appendChild(popup);
+        }
+
+        // Call the displayPopup function when the page is loaded
+        window.addEventListener('load', displayPopup);
+    </script>
+
 </body>
+
 </html>
