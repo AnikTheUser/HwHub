@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <title>PDF Files</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        body {
+            background-color: #1D1E22;
+             font-family: "Lato", sans-serif;
+        }
+        
+        .pdf {
+            margin: 10px;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid white;
+            border-radius: 5px;
+            background-color: #2B2D42;
+            cursor: pointer;
+        }
+        
+        .pdf:hover {
+            background-color: black;
+        }
+        
+        .pdf-icon {
+            font-size: 48px;
+            color: #008CBA;
+            margin-bottom: 10px;
+        }
+        
+        .pdf-name {
+            font-size: 18px;
+            color: white;
+            text-align: center;
+        
+        }
+        
+        h1 {
+            font-size: 50px;
+            text-align: center;
+            color: white;
+            font-family: 'Great Vibes', cursive;
+        
+        }
+        
+        h2 {
+            font-size: 35px;
+            text-align: center;
+            color: white;
+            font-family: 'Great Vibes', cursive;
+        
+        }
+        
+        p {
+            font-size: 16px;
+            text-align: center;
+            color: white;
+            font-family: 'arial';
+        
+        }
+   
+         .sidebar {
+              height: 100%;
+              width: 0;
+              position: fixed;
+              z-index: 1;
+              top: 0;
+              left: 0;
+              background-color: #111;
+              overflow-x: hidden;
+              transition: 0.5s;
+              padding-top: 60px;
+           }
+        
+           .sidebar a {
+              padding: 8px 8px 8px 32px;
+              text-decoration: none;
+              font-size: 25px;
+              color: #818181;
+              display: block;
+              transition: 0.3s;
+           }
+        
+           .sidebar a:hover {
+              color: #f1f1f1;
+           }
+        
+           .sidebar .closebtn {
+              position: absolute;
+              top: 0;
+              right: 25px;
+              font-size: 36px;
+              margin-left: 50px;
+           }
+        
+           .openbtn {
+              font-size: 20px;
+              cursor: pointer;
+              color: black;
+              padding: 10px 15px;
+              border: none;
+               position: absolute;
+                top: 8px;
+                 left: 16px;
+               font-size: 18px;
+                background-color: #fff;
+           }
+        
+           .openbtn:hover {
+              background-color: #333;
+           }
+        
+           #content {
+              transition: margin-left 0.5s;
+              padding: 16px;
+           }
+        
+           /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        
+           @media screen and (max-height: 450px) {
+              .sidebar {
+         padding-top: 15px;
+              }
+              .sidebar a {
+         font-size: 18px;
+              }
+           }
+    </style>
+</head>
+
+<body>
+    <h1 style="color:white">
+        <center>NoteHub</center>
+    </h1>
+    <div class="container">
+        <div class="pdf" onclick="window.open('pdfs/file1.pdf')">
+            <i class="fas fa-file-pdf pdf-icon"></i>
+            <div class="pdf-name">Telegu Ls 1</div>
+        </div>
+        <div class="pdf" onclick="window.open('pdfs/file2.pdf')">
+            <i class="fas fa-file-pdf pdf-icon"></i>
+            <div class="pdf-name">Holiday Hw</div>
+        </div>
+        <!-- Add more PDFs as needed -->
+    </div>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="hide()">×</a>
+         <a href="#">All Subjects</a>
+        <a href="#">English</a>
+        <a href="#">Hindi</a>
+        <a href="#">Maths</a>
+        <a href="#">Science</a>
+         <a href="#">Social</a>
+    </div>
+    <div id="content">
+        <button class="openbtn" id="openbtn" onclick="show()">☰ Sort By</button>
+    </div>
+    <script src="https://kit.fontawesome.com/9e0761fa1a.js" crossorigin="anonymous"></script>
+
+    <script>
+        function show() {
+           document.getElementById("mySidebar").style.width = "250px";
+           document.getElementById("content").style.marginLeft = "250px";
+        }
+        
+        function hide() {
+           document.getElementById("mySidebar").style.width = "0";
+           document.getElementById("content").style.marginLeft = "0";
+        }
+    </script>
+</body>
+
+</html>
