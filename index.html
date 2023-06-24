@@ -75,7 +75,7 @@
         
         }
         
-   .popup {
+.popup {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -86,9 +86,10 @@
   opacity: 0;
   animation: bounce-in 0.5s;
   animation-fill-mode: forwards;
-  border-radius: 10px; 
+  border-radius: 10px; /* Adjust the border radius as desired */
+  max-height: 80%; /* Adjust the maximum height as desired */
+  overflow: auto;
 }
-
 @keyframes bounce-in {
   0% {
     transform: translate(-50%, -200%);
@@ -107,12 +108,13 @@
 /* Style the close button */
 .close {
   position: absolute;
-  top: 40px;
-  right: 20px;
+  top: 10px; /* Adjust the top position as desired */
+  right: 10px; /* Adjust the right position as desired */
   font-size: 50px;
   color: #ff0000;
   cursor: pointer;
   font-family: 'arial';
+  z-index: 1; /* Added to ensure the close button appears above the popup content */
 }
 
 
@@ -184,11 +186,11 @@
               }
            }
            .tooltip {
-  position: absolute;
+  position: relative; /* Changed to relative positioning */
   display: inline-block;
   border-bottom: 1px dotted black;
   color: #fff;
- bottom: 8px;
+  bottom: 8px;
   left: 6px;
   cursor: pointer;
 }
@@ -203,9 +205,9 @@
   padding: 5px 0;
   position: absolute;
   z-index: 1;
-  bottom: 150%;
+  bottom: 100%; /* Changed to align with the bottom of the tooltip container */
   left: 50%;
-  margin-left: -60px;
+  transform: translateX(-50%); /* Added to center the tooltip horizontally */
 }
 
 .tooltip .tooltiptext::after {
@@ -265,7 +267,7 @@
     popup.className = 'popup';
 
     // Add the popup content
-    popup.innerHTML = '<h2 >How to Use</h2><p style="color:white">NoteHub is a website with a simple and user-friendly interface. You can click on any tab with the lesson title to access the desired content.There is a side menu for sorting files by subjects. Once the PDF loads, you have the option to download it by clicking on the top-right download button. Alternatively, you can continue writing directly in the browser itself. NoteHub makes it easy to navigate through lessons. <div class="tooltip"><b>ⒾVersion </b><span class="tooltiptext"><b>0.4.6</b><i>(NoteHub will be fully released on Version 1.0)</i></span></div></p>';
+    popup.innerHTML = '<h2 >How to Use</h2><p style="color:white">NoteHub is a website with a simple and user-friendly interface. You can click on any tab with the lesson title to access the desired content.There is a side menu for sorting files by subjects. Once the PDF loads, you have the option to download it by clicking on the top-right download button. Alternatively, you can continue writing directly in the browser itself. NoteHub makes it easy to navigate through lessons. <div class="tooltip"><b>ⒾVersion </b><span class="tooltiptext"><b>0.4.8</b><i>(NoteHub will be fully released on Version 1.0)</i></span></div></p>';
 
     // Create the close button
     var closeButton = document.createElement('span');
@@ -303,6 +305,12 @@
 </body>
 
 </html>
+
+    </script>
+</body>
+
+</html>
+
 
     </script>
 </body>
