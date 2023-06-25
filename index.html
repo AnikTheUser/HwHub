@@ -86,8 +86,8 @@
   opacity: 0;
   animation: bounce-in 0.5s;
   animation-fill-mode: forwards;
-  border-radius: 10px; /* Adjust the border radius as desired */
-  max-height: 80%; /* Adjust the maximum height as desired */
+  border-radius: 10px;  
+  max-height: 80%; 
   overflow: auto;
 }
 @keyframes bounce-in {
@@ -105,17 +105,16 @@
   }
 }
 
-/* Style the close button */
+
 .close {
   position: absolute;
-  top: 10px; /* Adjust the top position as desired */
-  right: 10px; /* Adjust the right position as desired */
+  top: 10px;
+  right: 10px; 
   font-size: 50px;
   color: #ff0000;
   cursor: pointer;
   font-family: 'arial';
-  z-index: 1; /* Added to ensure the close button appears above the popup content */
-}
+  z-index: 1; 
 
 
 
@@ -175,7 +174,6 @@
               padding: 16px;
            }
         
-           /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
         
            @media screen and (max-height: 450px) {
               .sidebar {
@@ -186,7 +184,7 @@
               }
            }
            .tooltip {
-  position: relative; /* Changed to relative positioning */
+  position: relative; 
   display: inline-block;
   border-bottom: 1px dotted black;
   color: #fff;
@@ -205,9 +203,9 @@
   padding: 5px 0;
   position: absolute;
   z-index: 1;
-  bottom: 100%; /* Changed to align with the bottom of the tooltip container */
+  bottom: 100%;
   left: 50%;
-  transform: translateX(-50%); /* Added to center the tooltip horizontally */
+  transform: translateX(-50%); 
 }
 
 .tooltip .tooltiptext::after {
@@ -276,34 +274,28 @@
    
     <script src="https://kit.fontawesome.com/9e0761fa1a.js" crossorigin="anonymous"></script>
    <script>
-  // Function to display the popup
+
   function displayPopup() {
-    // Create the popup element
+   
     var popup = document.createElement('div');
     popup.className = 'popup';
 
-    // Add the popup content
     popup.innerHTML = '<h2 >How to Use</h2><p style="color:white">NoteHub is a website with a simple and user-friendly interface. You can click on any tab with the lesson title to access the desired content.There is a side menu for sorting files by subjects. Once the PDF loads, you have the option to download it by clicking on the top-right download button. Alternatively, you can continue writing directly in the browser itself. NoteHub makes it easy to navigate through lessons. <div class="tooltip"><b>ⒾVersion </b><span class="tooltiptext"><b>0.5.0</b><i>(NoteHub will be fully released on Version 1.0)</i></span></div></p>';
 
-    // Create the close button
     var closeButton = document.createElement('span');
     closeButton.className = 'close';
-    closeButton.innerHTML = '&times;'; // Insert an "X" symbol
+    closeButton.innerHTML = '&times;'; 
     closeButton.addEventListener('click', function () {
-      popup.parentNode.removeChild(popup); // Remove the popup when the close button is clicked
+      popup.parentNode.removeChild(popup); 
     });
-
-    // Append the close button to the popup
+    
     popup.appendChild(closeButton);
 
-    // Append the popup to the body element
     document.body.appendChild(popup);
 
-    // Add a class to trigger the animation
     popup.classList.add('show');
   }
 
-  // Call the displayPopup function when the page is loaded
   window.addEventListener('load', displayPopup);
 </script>
 
@@ -319,16 +311,4 @@
         }
     </script>
 </body>
-
-</html>
-
-    </script>
-</body>
-
-</html>
-
-
-    </script>
-</body>
-
 </html>
