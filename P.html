@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>NoteHub | Partners</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: hsl(0, 78%, 62%);
+      --cyan: hsl(180, 62%, 55%);
+      --orange: hsl(34, 97%, 64%);
+      --blue: hsl(212, 86%, 64%);
+      --varyDarkBlue: hsl(234, 12%, 34%);
+      --grayishBlue: hsl(229, 6%, 66%);
+      --veryLightGray: hsl(0, 0%, 98%);
+      --weight1: 200;
+      --weight2: 400;
+      --weight3: 600;
+    }
+
+    body {
+      font-size: 15px;
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .attribution { 
+      font-size: 11px; 
+      text-align: center; 
+    }
+
+    .attribution a { 
+      color: hsl(228, 45%, 44%); 
+    }
+
+    h3 {
+      font-size: 50px;
+      text-align: center;
+      color: var(--veryLightGray);
+      font-family: 'Great Vibes', cursive;
+      margin: 20px 0;
+    }
+
+    .row1-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px; /* Add space between the boxes */
+    }
+
+    .box {
+      border-radius: 5px;
+      box-shadow: 0px 1px 20px -1px var(--grayishBlue);
+      padding: 20px;
+      width: 100%; /* Use percentage to allow it to adapt */
+      max-width: 300px; /* Max width to keep consistent size */
+      min-height: 200px; /* Ensure the box has a minimum height */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      position: relative; /* Add position relative for absolute positioning */
+    }
+
+    .box-content {
+      flex: 1; /* Expand to fill available space */
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      align-self: center; /* Center images horizontally */
+    }
+
+    p {
+      color: var(--veryLightGray);
+      font-size: 16px;
+    }
+
+    .cyan {
+      border-top: 3px solid var(--cyan);
+    }
+
+    .red {
+      border-top: 3px solid var(--red);
+    }
+
+    .blue {
+      border-top: 3px solid var(--blue);
+    }
+
+    .orange {
+      border-top: 3px solid var(--orange);
+    }
+
+    h2 {
+      color: var(--veryLightGray);
+      font-weight: var(--weight3);
+      font-family: 'Great Vibes', cursive;
+      font-size: 37px;
+    }
+
+    @media (max-width: 450px) {
+      .box {
+        margin: 10px 0; /* Adjust margin for smaller screens */
+      }
+    }
+
+    @media (min-width: 950px) {
+      .row1-container, .row2-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .box-down {
+        position: relative;
+        top: 150px;
+      }
+    }
+
+    /* Ensure the whole box is clickable and remove default anchor styling */
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      position: relative; /* Ensure clickable area within box */
+    }
+
+    .box a {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    .box a:hover {
+      background-color: transparent; /* Optional: remove hover effect */
+    }
+  </style>
+</head>
+<body>
+  <h3>Meet our Partners</h3>
+  <div class="row1-container">
+    <div class="box box-down cyan">
+      <a href="https://aniktheuser.github.io/Notehub/" class="box-link">
+        <div class="box-content">
+          <h2>NoteHub</h2>
+          <p>What you doing here? Complete your notes >:(</p>
+          <img src="https://assets.codepen.io/2301174/icon-supervisor.svg" alt="">
+        </div>
+      </a>
+    </div>
+    <div class="box red">
+      <a href="index.html" class="box-link">
+        <div class="box-content">
+          <h2>HwHub</h2>
+          <p>Completed Notes? Bro you still didnt do your homework :I</p>
+          <img src="https://assets.codepen.io/2301174/icon-team-builder.svg" alt="">
+        </div>
+      </a>
+    </div>
+    <div class="box box-down blue">
+      <a href="https://example.com/cornhub" class="box-link">
+        <div class="box-content">
+          <h2>CornHub(New)</h2>
+          <p>Completed Hw and Notes? see some corn to relax :D</p>
+          <img src="https://assets.codepen.io/2301174/icon-calculator.svg" alt="">
+        </div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
